@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayya kopi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigasi -->
+    <header>
+        <a href="#" class="logo">Kayya Kopi</a>
+        <nav>
+            <ul>
+                <li><a href="#informasi">Informasi</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Selamat Datang di Kayya Café</h1>
+        <p>Rasakan kehangatan dalam setiap tegukan kopi yang kami sajikan.</p>
+        <a href="#menu" class="btn-cta">Lihat Menu Kami</a>
+    </section>
+
+    <div class="container">
+        
+        <!-- Bagian Informasi -->
+        <section id="informasi">
+            <h2 class="section-title">Informasi Kafe</h2>
+            <p>Kayya Café lahir dari kecintaan kami terhadap biji kopi nusantara. Dengan suasana yang nyaman dan menenangkan, kami menawarkan tempat terbaik untuk bersantai, bekerja, atau berkumpul bersama orang tersayang. Kami buka setiap hari mulai pukul <strong>08:00 WIB hingga 22:00 WIB</strong>.</p>
+        </section>
+
+        <!-- Bagian Menu -->
+        <section id="menu">
+            <h2 class="section-title">Menu Favorit</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <h3>BUTTERSCOTCH SEA SALT</h3>
+                    <img src="asset/img/BUTTERSCOTCH .jpeg" alt="" class="img">
+                    <p>espresso dan susu yang memadukan rasa manis karamel dari sirup butterscotch dengan sentuhan gurih dari garam laut.</p>
+                    <span class="price">Rp 23.000</span>
+                </div>
+                <div class="menu-card">
+                    <h3>KAYYA KOPSU AREN</h3>
+                    <img src="asset/img/aren.jpeg" alt="" class="img">
+                    <p>nikmatnya kopi ditambah wanginya aren menjadi perpaduan yang sempurna.</p>
+                    <span class="price">Rp 13.000</span>
+                </div>
+                <div class="menu-card">
+                    <h3>MATCHA</h3>
+                    <img src="asset/img/matcha.jpeg" alt="" class="img">
+                    <p>aroma khas matcha yang menenangkan, ditambah creamynya susu menjadi perpaduan yang pas.</p>
+                    <span class="price">Rp 19.000</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Kontak -->
+<section id="kontak">
+    <h2 class="section-title">Hubungi Kami</h2>
+    <p>Temukan kami di sosial media atau kunjungi langsung kedai kami!</p>
+    
+    <div class="contact-links">
+        <a href="https://www.instagram.com/kayya.kopi?igsh=MWptcmwzNjA3aHVobA==" class="contact-btn">Instagram</a>
+        <a href="https://www.tiktok.com/@kayya_kopi?_r=1&_t=ZS-97zpoaMa8g8" class="contact-btn">TikTok</a>
+        <a href="https://wa.me/6282262800040?text=Halo%20Kayya%20Kopi,%20saya%20mau%20pesan!" class="contact-btn" target="_blank">WhatsApp</a>
+        <a href="mailto:email : kayyakopi@gmail.com?subject=Tanya%20Menu%20Kayya%20Kopi" class="contact-btn">Email</a>
+        <a href="https://maps.app.goo.gl/enaezUaz43GFpiCd7?g_st=aw" class="contact-btn">Map</a>
+        <a href="https://forms.gle/qTwri9qdHtpdTc2v7" class="contact-btn">Kritik & Saran</a>
+    </div>
+</section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Kayya Café. All rights reserved.</p>
+    </footer>
+
+<script>
+    // Memilih semua tombol dengan class contact-btn
+    const contactButtons = document.querySelectorAll('.contact-btn');
+
+    contactButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            
+            // Membuat elemen div baru untuk biji kopi
+            const bean = document.createElement('div');
+            bean.classList.add('coffee-bean-anim');
+            
+            // Anda bisa menggunakan emoji biji kopi (🫘) atau cangkir (☕)
+            bean.innerHTML = '☕'; 
+
+            // Mengatur posisi elemen sesuai dengan koordinat klik mouse
+            bean.style.left = `${e.clientX - 15}px`; // -15px untuk menengahkan emoji di kursor
+            bean.style.top = `${e.clientY - 15}px`;
+
+            // Memasukkan elemen ke dalam halaman (body)
+            document.body.appendChild(bean);
+
+            // Menghapus elemen setelah 1 detik (sesuai durasi animasi CSS)
+            setTimeout(() => {
+                bean.remove();
+            }, 1000);
+        });
+    });
+</script>
+
+</body>
+</html>

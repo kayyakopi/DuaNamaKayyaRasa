@@ -1,0 +1,327 @@
+:root {
+    --kayya-espresso:   #2B1810;   /* deepest brown — text, borders */
+    --kayya-brown:      #4A2E1B;   /* primary brown */
+    --kayya-mocha:      #7A4E30;   /* mid brown */
+    --kayya-terracotta: #C96A38;   /* accent / CTA */
+    --kayya-gold:       #E8A75A;   /* highlight / hover */
+    --kayya-cream:      #D07B4D;   /* page background */
+    --kayya-latte:      #C06A3C;   /* card/surface border */
+    --kayya-milk:       #FAF7F3;   /* card body */
+    --kayya-foam:       #FFFFFF;   /* white text/icons */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    /* Mencegah header menutupi konten saat menggunakan anchor link (#menu) */
+    scroll-padding-top: 80px; 
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--kayya-milk);
+    color: var(--kayya-espresso);
+    line-height: 1.6;
+}
+
+/* Navbar */
+header {
+    background-color: var(--kayya-brown);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(43, 24, 16, 0.3);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--kayya-gold);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--kayya-milk);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--kayya-gold);
+}
+
+/* Container & Sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+h2.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--kayya-espresso);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+/* Garis hiasan di bawah judul section */
+h2.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--kayya-terracotta);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.hero {
+    text-align: center;
+    padding: 8rem 2rem;
+    background-color: var(--kayya-milk);
+    background-image: linear-gradient(to bottom, var(--kayya-milk), #f0e9e1);
+    color: var(--kayya-espresso);
+}
+
+.hero h1 {
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+    color: var(--kayya-espresso);
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--kayya-mocha);
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--kayya-terracotta);
+    color: var(--kayya-foam);
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(201, 106, 56, 0.4);
+}
+
+.btn-cta:hover {
+    background-color: var(--kayya-gold);
+    color: var(--kayya-espresso);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(232, 167, 90, 0.5);
+}
+
+/* Informasi Section */
+#informasi {
+    background-color: var(--kayya-foam);
+    border-radius: 20px;
+    padding: 4rem 3rem;
+    margin-bottom: 5rem;
+    border: 1px solid rgba(43, 24, 16, 0.05);
+    box-shadow: 0 10px 30px rgba(43, 24, 16, 0.08);
+    text-align: center;
+}
+
+#informasi p {
+    font-size: 1.15rem;
+    color: var(--kayya-mocha);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Menu Section */
+#menu {
+    margin-bottom: 5rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.menu-card {
+    background-color: var(--kayya-foam);
+    border: 1px solid rgba(43, 24, 16, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(43, 24, 16, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--kayya-gold);
+    box-shadow: 0 12px 32px rgba(43, 24, 16, 0.12);
+}
+
+/* Penambahan styling khusus untuk gambar menu */
+.menu-card img {
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.menu-card h3 {
+    color: var(--kayya-espresso);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.menu-card p {
+    color: var(--kayya-mocha);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    flex-grow: 1; /* Mendorong harga ke bagian paling bawah kartu */
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--kayya-terracotta);
+    width: 100%;
+    padding-top: 1rem;
+    border-top: 2px dashed rgba(43, 24, 16, 0.1);
+}
+
+/* Tata Letak Tombol Kontak */
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.contact-btn {
+    background-color: var(--kayya-brown);
+    color: var(--kayya-milk);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--kayya-gold);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.contact-btn:hover {
+    background-color: var(--kayya-gold);
+    color: var(--kayya-espresso);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(232, 167, 90, 0.4);
+}
+
+/* Animasi Biji Kopi (Dikelola oleh JavaScript) */
+.coffee-bean-anim {
+    position: fixed;
+    pointer-events: none; /* Agar tidak mengganggu klik elemen lain */
+    font-size: 2rem; /* Ukuran emoji biji kopi */
+    animation: floatUp 1s ease-out forwards;
+    z-index: 9999;
+}
+
+@keyframes floatUp {
+    0% { 
+        transform: translateY(0) scale(0.5); 
+        opacity: 1; 
+    }
+    50% { 
+        transform: translateY(-60px) scale(1.2) rotate(20deg); 
+        opacity: 0.8; 
+    }
+    100% { 
+        transform: translateY(-120px) scale(1) rotate(-20deg); 
+        opacity: 0; 
+    }
+}
+
+/* Kontak Section */
+#kontak {
+    background-color: var(--kayya-espresso);
+    color: var(--kayya-milk);
+    padding: 5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+#kontak h2.section-title {
+    color: var(--kayya-gold);
+}
+
+#kontak h2.section-title::after {
+    background-color: var(--kayya-terracotta);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.15rem;
+    margin-top: 3rem;
+}
+
+.contact-info strong {
+    color: var(--kayya-gold);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--kayya-brown);
+    color: var(--kayya-milk);
+    margin-top: 4rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1rem;
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .menu-card {
+        padding: 1.5rem;
+    }
+}
