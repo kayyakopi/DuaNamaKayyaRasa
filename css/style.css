@@ -1,13 +1,13 @@
 :root {
-    --kayya-espresso:   #2B1810;   /* deepest brown — text, borders */
-    --kayya-brown:      #4A2E1B;   /* primary brown */
-    --kayya-mocha:      #7A4E30;   /* mid brown */
-    --kayya-terracotta: #C96A38;   /* accent / CTA */
-    --kayya-gold:       #E8A75A;   /* highlight / hover */
-    --kayya-cream:      #D07B4D;   /* page background */
-    --kayya-latte:      #C06A3C;   /* card/surface border */
-    --kayya-milk:       #FAF7F3;   /* card body */
-    --kayya-foam:       #FFFFFF;   /* white text/icons */
+    --kayya-espresso:   #2B1810;  
+    --kayya-brown:      #4A2E1B;
+    --kayya-mocha:      #7A4E30;
+    --kayya-terracotta: #C96A38;
+    --kayya-gold:       #E8A75A;
+    --kayya-cream:      #D07B4D;
+    --kayya-latte:      #C06A3C;
+    --kayya-milk:       #FAF7F3;
+    --kayya-foam:       #FFFFFF;  
 }
 
 * {
@@ -18,7 +18,6 @@
 }
 
 html {
-    /* Mencegah header menutupi konten saat menggunakan anchor link (#menu) */
     scroll-padding-top: 80px; 
     scroll-behavior: smooth;
 }
@@ -29,7 +28,6 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar */
 header {
     background-color: var(--kayya-brown);
     padding: 1rem 5%;
@@ -59,7 +57,7 @@ nav ul {
 nav ul li a {
     color: var(--kayya-milk);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
@@ -67,7 +65,6 @@ nav ul li a:hover {
     color: var(--kayya-gold);
 }
 
-/* Container & Sections */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -84,7 +81,6 @@ h2.section-title {
     position: relative;
 }
 
-/* Garis hiasan di bawah judul section */
 h2.section-title::after {
     content: '';
     display: block;
@@ -93,6 +89,14 @@ h2.section-title::after {
     background-color: var(--kayya-terracotta);
     margin: 10px auto 0;
     border-radius: 2px;
+}
+
+.hero img{
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto 2rem;
 }
 
 .hero {
@@ -136,7 +140,6 @@ h2.section-title::after {
     box-shadow: 0 6px 20px rgba(232, 167, 90, 0.5);
 }
 
-/* Informasi Section */
 #informasi {
     background-color: var(--kayya-foam);
     border-radius: 20px;
@@ -273,7 +276,6 @@ h2.section-title::after {
     }
 }
 
-/* Kontak Section */
 #kontak {
     background-color: var(--kayya-espresso);
     color: var(--kayya-milk);
@@ -303,7 +305,6 @@ h2.section-title::after {
     color: var(--kayya-gold);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
@@ -313,10 +314,9 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
-        gap: 1rem;
+        display: none;
     }
     .hero h1 {
         font-size: 2.8rem;
